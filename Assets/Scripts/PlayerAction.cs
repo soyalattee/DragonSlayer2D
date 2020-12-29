@@ -17,6 +17,7 @@ public class PlayerAction : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -47,7 +48,8 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    private void PlayerAnim(float h,float v){
+    private void PlayerAnim(float h,float v)
+    {
         if(anim.GetInteger("hAxisRaw") != h){
             anim.SetBool("isChange",true);
             anim.SetInteger("hAxisRaw",(int)h);
