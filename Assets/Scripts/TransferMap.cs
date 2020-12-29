@@ -7,10 +7,12 @@ public class TransferMap : MonoBehaviour
     public string transfersceneName;
     public string currentMap;
     private MovingObject thePlayer;
+    private FadeInOut fader;
     // Start is called before the first frame update
     void Start()
     {
         thePlayer = FindObjectOfType<MovingObject>();
+        fader = FindObjectOfType<FadeInOut>();
     }
 
     public void SetChangeSceneName(string transfersceneName)
@@ -22,7 +24,16 @@ public class TransferMap : MonoBehaviour
     {
         if(collision.gameObject.name == "Player"){
             thePlayer.currentMapName = transfersceneName;
-            SceneManager.LoadScene(transfersceneName);
+            StartCoroutine(Activate());
         }
+    }
+
+    IEnumerator Activate()
+    {
+        fader.Fade(()=>{
+            SceneManager.LoadScene(transfersceneName);
+        });
+        
+        yield return null;
     }
 }

@@ -10,14 +10,12 @@ public class PlayerAction : MonoBehaviour
     public float speed = 1.5f;
     private Vector3 dirVec;
     private GameObject scanObj;
-
-
     Rigidbody2D rigid;
     Animator anim;
 
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        Debug.Log("player action");
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
