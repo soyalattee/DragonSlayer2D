@@ -13,6 +13,8 @@ public class PlayerAction : MonoBehaviour
     Rigidbody2D rigid;
     Animator anim;
 
+    public DialogueManager dialogueManager;
+
     void Start()
     {
         Debug.Log("player action");
@@ -23,14 +25,14 @@ public class PlayerAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+        h = dialogueManager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+        v = dialogueManager.isAction ? 0 : Input.GetAxisRaw("Vertical");
         if(h !=0 || v!=0)
             dirVec = new Vector3(h,v,0);
         PlayerAnim(h,v);
 
         if(Input.GetButtonDown("Jump") && scanObj!=null){
-            Debug.Log("this is " + scanObj);
+            dialogueManager.LoadDialogue(scanObj);
         }
     }
 
