@@ -14,6 +14,7 @@ public class MovingObject : MonoBehaviour
             instance = this;
         }else{
             Destroy(this.gameObject);
+            
         }
     }
 }
