@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{CE6636C1-BB2C-F9A9-D263-D49609BCDCCB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerAction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueDataManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/MovingObject.cs" Line="17" Column="13" />
-      <File FileName="Assets/Scripts/PlayerAction.cs" Line="27" Column="6" />
-      <File FileName="Assets/Scripts/TransferMap.cs" Line="7" Column="37" />
+      <File FileName="Assets/Scripts/MovingObject.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/PlayerAction.cs" Line="28" Column="1" />
+      <File FileName="Assets/Scripts/TransferMap.cs" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="12" Column="34" />
+      <File FileName="Assets/Scripts/ObjectData.cs" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/DialogueDataManager.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +14,7 @@
           <Node name="DragonSlayer2D" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="PlayerAction.cs" selected="True" />
+                <Node name="DialogueDataManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
