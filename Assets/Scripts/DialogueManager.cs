@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     public bool isAction;
     public int talkIndex;
 
+    public QuestManager questManager;
+
     public static DialogueManager instance;
 
     public DialogueDataManager dialogueDataManager;
@@ -45,7 +47,8 @@ public class DialogueManager : MonoBehaviour
 
     void Talk(int id, bool isNpc)
     {
-        string dialogueData = dialogueDataManager.GetDialogue(id, talkIndex);
+        //int questTalkIndex = questManager.GetQuestTalkIndex(id);
+        string dialogueData = dialogueDataManager.GetDialogue(id , talkIndex);
 
         if (dialogueData == null)
         {
@@ -56,6 +59,7 @@ public class DialogueManager : MonoBehaviour
         if (isNpc)
         {
             string[] dialogueDatas = dialogueData.Split(':');
+
             portraitImg.sprite = dialogueDataManager.GetPortrait(id, int.Parse(dialogueDatas[1]));
             dialogText.text = dialogueDatas[0];
 

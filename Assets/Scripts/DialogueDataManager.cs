@@ -9,6 +9,22 @@ public class DialogueDataManager : MonoBehaviour
 
     public Sprite[] portraitArr;
 
+    public static DialogueDataManager instance;
+
+    void Start()
+    {
+        if (instance == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+
+        }
+    }
+
     void Awake()
     {
         dialogueData = new Dictionary<int, string[]>();
@@ -22,11 +38,16 @@ public class DialogueDataManager : MonoBehaviour
     void GenerateData()
     {
         //Adward
-        dialogueData.Add(1000, new string[] { "이게 얼마만이야! \n 정말 보고싶었어......:2", "무엇을 도와줄까? 뭐든 말만해!:1"});
+        dialogueData.Add(1000, new string[] { "이게 얼마만이야! \n 정말 보고싶었어......:2", "무엇을 도와줄까? 뭐든 말만해!:0"});
         //표지판
         dialogueData.Add(100, new string[] { " 표지판이다. \n \"슬라임 서식지\" 라고 적혀있다.  " });
         //마을주민1
         dialogueData.Add(200, new string[] { "그 소문 들었어?", "봉인된 용이 깨어난거 같대... \n 요즘들어 몬스터들이 늘어난 것도 그 영향이라나!!" });
+
+
+        //Quest
+        //여정의 시작 대화하기
+        dialogueData.Add(10 + 1000, new string[] { " 도시가 예전과 많이 달라졌지 ? \n 천천히 둘러봐:0" });
 
         portraitData.Add(1000 + 0,portraitArr[0]);
         portraitData.Add(1000 + 1, portraitArr[1]);
